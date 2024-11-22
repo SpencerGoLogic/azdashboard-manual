@@ -16,6 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          # client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_85734A734BEF42E7A4DB4A101FBF5CBC }}
+          # tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F5D0AE924AC346E6B89865456D7328CA }}
+          # subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_70847FDA5928404FA8986C8950972F27 }}
+          creds: ${{secrets.JSON_SECRET_ALL}}
+
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
@@ -57,9 +65,10 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_85734A734BEF42E7A4DB4A101FBF5CBC }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F5D0AE924AC346E6B89865456D7328CA }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_70847FDA5928404FA8986C8950972F27 }}
+          # client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_85734A734BEF42E7A4DB4A101FBF5CBC }}
+          # tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F5D0AE924AC346E6B89865456D7328CA }}
+          # subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_70847FDA5928404FA8986C8950972F27 }}
+          creds: ${{secrets.JSON_SECRET_ALL}}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
