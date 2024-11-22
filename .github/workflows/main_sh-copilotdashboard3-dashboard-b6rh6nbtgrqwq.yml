@@ -51,8 +51,8 @@ jobs:
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
+      #- name: Unzip artifact for deployment
+      #  run: unzip release.zip
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -67,5 +67,5 @@ jobs:
         with:
           app-name: 'sh-copilotdashboard3-dashboard-b6rh6nbtgrqwq'
           slot-name: 'Production'
-          package: .
+          package: ./release.zip
           
