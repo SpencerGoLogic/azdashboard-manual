@@ -74,7 +74,8 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'sh-copilotdashboard3-dashboard-b6rh6nbtgrqwq'
-          slot-name: 'Production'
+          #app-name: 'sh-copilotdashboard3-dashboard-b6rh6nbtgrqwq'
+          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+          #slot-name: 'Production'
           package: ./release.zip
           
